@@ -1,0 +1,12 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+  font-family: Montserrat, serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
