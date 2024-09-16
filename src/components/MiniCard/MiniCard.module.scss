@@ -1,0 +1,57 @@
+.card {
+  width: 416px;
+  height: 130px;
+  // position: relative;
+  padding: 1rem;
+  border: 1px solid $color-light-border;
+  @include flex(space-between, center, row, 1rem);
+
+  .imgBlock {
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .infoBox {
+    // width: 334px;
+    // height: 132px;
+    // top: 382px;
+    // left: 26px;
+    // padding: 32px 24px 32px 24px;
+    // @include flex(space-between, center, row, 8px);
+    // border: 1px solid $color-light-border;
+    // background-color: $color-white-default;
+    // position: absolute;
+    // z-index: 1;
+
+    .infoBoxArt {
+      max-width: 219px;
+      max-height: 98px;
+      @include flex(space-between, flex-start, column);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      h3 {
+        @include font(1.125rem, 500, 26.32px, -0.03em);
+        color: $color-dark-text;
+      }
+
+      h4 {
+        @include font(1rem, 400, 26.32px, -0.01em);
+        color: $color-orange-text;
+      }
+
+      h5 {
+        @include font(1rem, 700, 26.32px, -0.01em);
+        color: $color-dark-text;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
