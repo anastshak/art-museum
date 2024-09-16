@@ -1,0 +1,5 @@
+.cardList {
+  @include flex(center, center, row, 20px);
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
