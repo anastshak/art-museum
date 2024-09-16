@@ -30,6 +30,8 @@
       "@pages/*": ["src/pages/*"],
       "@router/*": ["src/router/*"],
       "@utils/*": ["src/utils/*"],
+      "@types/*": ["src/types/*"],
+      "@services/*": ["src/services/*"],
     }
   },
   "include": ["src"]
