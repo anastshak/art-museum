@@ -1,0 +1,28 @@
+.pagination {
+  margin-top: 30px;
+  @include flex(center, center, row, 20px);
+}
+
+.pagination button {
+  padding: 5px 8px;
+  @include font(1.5rem, 600, normal);
+  border-radius: 7px;
+  border: 2px solid $color-dark-border;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  border-color: $color-orange-text;
+  color: $color-orange-text;
+}
+
+.pagination button:disabled {
+  border: 2px solid $color-btn-disabled;
+  color: $color-btn-disabled;
+  cursor: default;
+}
+
+.pagination button:disabled:hover {
+  box-shadow: none;
+}
