@@ -1,16 +1,17 @@
-import styles from './Gallery.module.scss';
-
 import { getArtworks } from '@/services/api';
 import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Loader from '@/components/Loader/Loader';
 import { ArtWork } from '@/types/types';
 import CardList from '@/components/CardsList/CardsList';
+import Pagination from '@/components/Pagination/Pagination';
+
+import styles from './Gallery.module.scss';
 
 export const Gallery = () => {
   const [result, setResult] = useState<ArtWork[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const [totalPages, setTotalPages] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(1);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -18,13 +19,12 @@ export const Gallery = () => {
   const onSearch = useCallback(
     async (searchQuery: string, page: number = 1, limit: number = 3) => {
       setPage(page);
-      setSearchParams({ search: searchQuery, page: page.toString(), limit: limit.toString() });
+      setSearchParams({ search: searchQuery, page: page.toString() });
       try {
         setIsLoading(true);
         const data = await getArtworks(searchQuery, page, limit);
-        // console.log(data);
         setResult(data.works);
-        // setTotalPages(data.totalPages);
+        setTotalPages(data.totalPages);
       } catch (error) {
         console.error('Search error:', error);
       } finally {
@@ -44,6 +44,10 @@ export const Gallery = () => {
     }
   }, [searchParams, onSearch, page]);
 
+  const onChangePage = (pageNumber: number) => {
+    setSearchParams({ search: searchParams.get('search') || '', page: pageNumber.toString() });
+  };
+
   return (
     <section className={styles.section}>
       <h4 className={styles.heading}>Topics for you</h4>
@@ -54,6 +58,7 @@ export const Gallery = () => {
         <>
           <section className={styles.mainSide}>
             <CardList cards={result} />
+            <Pagination currentPage={page} totalPages={totalPages} changePage={onChangePage} />
           </section>
         </>
       )}
