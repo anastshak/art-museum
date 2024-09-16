@@ -1,0 +1,5 @@
+.footer {
+  background: $color-bg-footer;
+  @include flex(space-around, center);
+  padding: 1rem 0;
+}
