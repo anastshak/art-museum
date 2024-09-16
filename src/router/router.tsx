@@ -1,7 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Home } from '@/pages/Home/Home';
+import { ErrorNotFoundPage } from '@/pages/NotFound/ErrorNotFound';
+import { ErrorBoundary } from '@/components/Error-boundary/Error-boundary';
 
-export const router = createBrowserRouter([
+const routes = [
   {
     path: '/',
     element: <Home />,
@@ -12,4 +14,13 @@ export const router = createBrowserRouter([
     //   },
     // ],
   },
-]);
+  {
+    path: '*',
+    element: <ErrorNotFoundPage />,
+  },
+].map((route) => ({
+  ...route,
+  element: <ErrorBoundary>{route.element}</ErrorBoundary>,
+}));
+
+export const router = createBrowserRouter(routes);

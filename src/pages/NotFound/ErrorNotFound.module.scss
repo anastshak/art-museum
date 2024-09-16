@@ -1,0 +1,15 @@
+.page {
+  background-color: $color-bg-main;
+  color: $color-dark-text;
+  @include flex(center, center, column, 3rem);
+  min-height: 100vh;
+
+  .heading {
+    @include font(2rem, 600, normal);
+  }
+
+  .link {
+    @include font(1.5rem, 400, normal);
+    color: $color-orange-text;
+  }
+}
