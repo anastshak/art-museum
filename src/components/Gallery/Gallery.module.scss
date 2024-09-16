@@ -1,0 +1,14 @@
+.section {
+  text-align: center;
+  margin: 40px 0;
+
+  h2.heading {
+    color: $color-dark-text;
+    @include font(2rem, 400, 40px);
+  }
+
+  h4.heading {
+    color: $color-orange-text;
+    @include font(1rem, 400, 20px);
+  }
+}
