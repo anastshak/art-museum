@@ -9,31 +9,31 @@ export const RandomGallery = () => {
   const [result, setResult] = useState<ArtWork[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const page = Math.floor(Math.random() * 1000);
-  const limit: number = 9;
-
-  const onSearch = async (searchQuery: string = '', page: number = 1, limit: number = 9) => {
+  const onSearch = async (searchQuery: string = '', page: number, limit: number) => {
     try {
       setIsLoading(true);
       const data = await getArtworks(searchQuery, page, limit);
       setResult(data.works);
     } catch (error) {
       console.error('Fetching error:', error);
+      return <h3>Sorry, something happened :(</h3>;
     } finally {
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
+    const page = Math.floor(Math.random() * 1000);
+    const limit: number = 9;
     onSearch('', page, limit);
-  });
+  }, []);
 
   return (
     <section className={styles.section}>
       <h4 className={styles.heading}>Here some more</h4>
       <h2 className={styles.heading}>Other works for you</h2>
       {isLoading ? (
-        <p> Loading... </p>
+        <p className={styles.loading}> Loading... </p>
       ) : (
         <>
           <section className={styles.mainSide}>
