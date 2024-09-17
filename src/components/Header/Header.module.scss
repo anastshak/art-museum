@@ -43,3 +43,61 @@
     background-color: $color-white-default;
   }
 }
+
+.btn {
+  display: none;
+}
+
+@media (max-width: 625px) {
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: -305px;
+    @include flex(flex-start, baseline, column, 1rem);
+    width: 300px;
+    height: 100%;
+    background: $color-bg-header;
+    z-index: 50;
+    padding: 2.5rem 3rem;
+    transition: all 0.4s linear;
+
+    .link {
+      @include flex(null, center, null, 1rem);
+      font-size: 1.5rem;
+    }
+  }
+
+  .navigation.active {
+    transform: translateX(100%);
+  }
+
+  .btn {
+    width: 3rem;
+    height: 3rem;
+    @include flex(center, center, column, 0.5rem);
+    z-index: 60;
+    cursor: pointer;
+    border-radius: 99px;
+    margin-left: auto;
+    margin-right: 1rem;
+
+    div {
+      width: 2.5rem;
+      height: 0.2rem;
+      border-radius: 10px;
+      background-color: $color-light-border;
+      transform-origin: 1px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .btn.active {
+    .burger1 {
+      transform: rotate(45deg) translate(-5px, -5px);
+    }
+
+    .burger2 {
+      transform: rotate(-45deg) translate(-5px, 5px);
+    }
+  }
+}
