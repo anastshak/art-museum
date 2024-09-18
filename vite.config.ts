@@ -14,5 +14,9 @@ export default defineConfig({
         additionalData: `@import "../src/styles/mixins.scss"; @import "../src/styles/constants.scss";`,
       },
     },
+    modules: {
+      localsConvention: 'camelCase',
+    },
   },
+
 })
