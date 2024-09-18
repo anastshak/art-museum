@@ -6,7 +6,14 @@ export type ArtWork = {
   is_on_view: boolean;
 };
 
+export interface ArtWorkInfo {
+  data: ArtWork;
+}
 export interface ArtWorkCards {
+  works: ArtWork[];
+}
+
+export interface Data {
   works: ArtWork[];
   totalPages: number;
 }

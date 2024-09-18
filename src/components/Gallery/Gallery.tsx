@@ -22,7 +22,7 @@ export const Gallery = () => {
       setSearchParams({ search: searchQuery, page: page.toString() });
       try {
         setIsLoading(true);
-        const data = await getArtworks(searchQuery, page, limit);
+        const data = await getArtworks(page, limit);
         setResult(data.works);
         setTotalPages(data.totalPages);
       } catch (error) {

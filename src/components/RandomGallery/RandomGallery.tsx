@@ -9,10 +9,10 @@ export const RandomGallery = () => {
   const [result, setResult] = useState<ArtWork[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const onSearch = async (searchQuery: string = '', page: number, limit: number) => {
+  const onSearch = async (page: number, limit: number) => {
     try {
       setIsLoading(true);
-      const data = await getArtworks(searchQuery, page, limit);
+      const data = await getArtworks(page, limit);
       setResult(data.works);
     } catch (error) {
       console.error('Fetching error:', error);
@@ -25,7 +25,7 @@ export const RandomGallery = () => {
   useEffect(() => {
     const page = Math.floor(Math.random() * 1000);
     const limit: number = 9;
-    onSearch('', page, limit);
+    onSearch(page, limit);
   }, []);
 
   return (
