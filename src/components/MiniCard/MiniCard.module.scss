@@ -5,6 +5,7 @@
   padding: 1rem;
   border: 1px solid $color-light-border;
   @include flex(space-between, center, row, 1rem);
+  // flex-wrap: wrap;
 
   .imgBlock {
     img {
