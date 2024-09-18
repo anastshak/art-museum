@@ -4,9 +4,12 @@ import { RouterProvider } from 'react-router-dom';
 import { router } from '@/router/router';
 
 import './styles/index.scss';
+import { FavStorageProvider } from './hooks/useFavStorageProvider';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <FavStorageProvider>
+      <RouterProvider router={router} />
+    </FavStorageProvider>
   </StrictMode>,
 );

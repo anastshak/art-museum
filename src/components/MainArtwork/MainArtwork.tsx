@@ -45,7 +45,7 @@ export const MainArtwork = () => {
           <div className={styles.imgBlock}>
             <img className={styles.image} src={image} alt={cardInfo?.title} />
             <div className={styles.mark}>
-              <Bookmark />
+              <Bookmark id={cardInfo?.id || 0} />
             </div>
           </div>
           <div className={styles.infoBlock}>

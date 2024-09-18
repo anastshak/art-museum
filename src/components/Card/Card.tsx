@@ -25,7 +25,7 @@ export const Card = ({ card }: Props) => {
             <h4 className={styles.artist}>{card.artist_title}</h4>
             <h5 className={styles.isOnView}>{card.is_on_view ? 'Public' : 'Private'}</h5>
           </div>
-          <Bookmark />
+          <Bookmark id={card.id} />
         </div>
       </div>
     </Link>

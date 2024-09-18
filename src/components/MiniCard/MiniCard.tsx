@@ -26,7 +26,7 @@ export const MiniCard = ({ card }: Props) => {
             <h5 className={styles.isOnView}>{card.is_on_view ? 'Public' : 'Private'}</h5>
           </div>
         </div>
-        <Bookmark />
+        <Bookmark id={card.id} />
       </div>
     </Link>
   );
