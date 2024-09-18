@@ -1,10 +1,11 @@
-import { useFavStorageContext } from '@/hooks/useFavStorageProvider';
-import styles from './MainFavorites.module.scss';
-import { getArtwork } from '@/services/api';
 import { useEffect, useState } from 'react';
+import { useFavStorageContext } from '@/hooks/useFavStorageProvider';
+import { getArtwork } from '@/services/api';
 import { ArtWork } from '@/types/types';
 import { MiniCard } from '../MiniCard/MiniCard';
 import bookmark from '@/assets/bookmark.svg';
+
+import styles from './MainFavorites.module.scss';
 
 export const MainFavorites = () => {
   const favStorageContext = useFavStorageContext();

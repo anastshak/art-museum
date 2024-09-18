@@ -1,11 +1,12 @@
-import noImage from '@/assets/noImage.svg';
-import { Bookmark } from '@/components/Bookmark/Bookmark';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import styles from './MainArtwork.module.scss';
-import { useEffect, useState } from 'react';
 import { getArtwork } from '@/services/api';
 import { ArtWork } from '@/types/types';
+import noImage from '@/assets/noImage.svg';
+import { Bookmark } from '@/components/Bookmark/Bookmark';
+
+import styles from './MainArtwork.module.scss';
 
 export const MainArtwork = () => {
   const { id } = useParams();
