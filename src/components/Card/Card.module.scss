@@ -18,6 +18,7 @@
     left: 26px;
     padding: 32px 24px 32px 24px;
     @include flex(space-between, center, row, 8px);
+    flex-wrap: wrap;
     border: 1px solid $color-light-border;
     background-color: $color-white-default;
     position: absolute;
@@ -51,5 +52,24 @@
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 330px;
+    height: 600px;
+
+    .imgBlock {
+      img {
+        width: 330px;
+        height: 400px;
+      }
+    }
+
+    .infoBox {
+      width: 270px;
+      height: 200px;
+    }
   }
 }

@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   flex: 1 0 auto;
   padding: 50px;
+
   .loading {
     @include font(2rem, 500, normal);
     margin: auto;
@@ -60,6 +61,28 @@
           color: $color-orange-text;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .main {
+    .imgBlock {
+      width: 330px;
+      height: 400px;
+
+      .image {
+        width: 330px;
+        height: 400px;
+      }
+
+      .mark {
+        left: 260px;
+      }
+    }
+
+    .infoBlock {
+      width: 80%;
     }
   }
 }

@@ -48,3 +48,11 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 400px) {
+  .card {
+    width: 330px;
+    height: 100%;
+    flex-direction: column;
+  }
+}
