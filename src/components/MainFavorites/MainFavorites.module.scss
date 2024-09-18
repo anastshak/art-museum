@@ -1,0 +1,11 @@
+.main {
+  background-color: $color-bg-main;
+  @include flex(center, null, row, 45px);
+  flex-wrap: wrap;
+  flex: 1 0 auto;
+  padding: 50px;
+  .loading {
+    @include font(2rem, 500, normal);
+    margin: auto;
+  }
+}
