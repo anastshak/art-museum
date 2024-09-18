@@ -1,7 +1,10 @@
+.link {
+  text-decoration: none;
+}
+
 .card {
   width: 416px;
   height: 130px;
-  // position: relative;
   padding: 1rem;
   border: 1px solid $color-light-border;
   @include flex(space-between, center, row, 1rem);
@@ -15,17 +18,6 @@
   }
 
   .infoBox {
-    // width: 334px;
-    // height: 132px;
-    // top: 382px;
-    // left: 26px;
-    // padding: 32px 24px 32px 24px;
-    // @include flex(space-between, center, row, 8px);
-    // border: 1px solid $color-light-border;
-    // background-color: $color-white-default;
-    // position: absolute;
-    // z-index: 1;
-
     .infoBoxArt {
       max-width: 219px;
       max-height: 98px;

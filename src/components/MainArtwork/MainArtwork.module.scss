@@ -1,0 +1,64 @@
+.main {
+  background-color: $color-bg-main;
+  @include flex(center, null, row, 45px);
+  flex-wrap: wrap;
+  flex: 1 0 auto;
+  padding: 50px;
+  .loading {
+    @include font(2rem, 500, normal);
+    margin: auto;
+  }
+
+  .imgBlock {
+    width: 387px;
+    height: 444px;
+
+    position: relative;
+
+    .image {
+      width: 387px;
+      height: 444px;
+    }
+
+    .mark {
+      left: 310px;
+      top: 10px;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  .infoBlock {
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    @include flex(space-between, flex-start, column, 1.5rem);
+    color: $color-dark-text;
+
+    h3 {
+      @include font(2rem, 400, 40px);
+      margin-bottom: 10px;
+    }
+
+    .info {
+      h4 {
+        @include font(1.5rem, 400, 30px);
+        color: $color-orange-text;
+      }
+
+      h5 {
+        @include font(1rem, 700, 20px);
+      }
+    }
+
+    .overview {
+      h6 {
+        @include font(1rem, 400, 20px);
+
+        span {
+          color: $color-orange-text;
+        }
+      }
+    }
+  }
+}

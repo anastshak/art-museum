@@ -1,6 +1,7 @@
 import noImage from '@/assets/noImage-mini.svg';
 import { ArtWork } from '@/types/types';
 import { Bookmark } from '@/components/Bookmark/Bookmark';
+import { Link } from 'react-router-dom';
 
 import styles from './MiniCard.module.scss';
 
@@ -13,18 +14,20 @@ export const MiniCard = ({ card }: Props) => {
   const image = card.image_id ? imageURL : noImage;
 
   return (
-    <div className={styles.card}>
-      <div className={styles.imgBlock}>
-        <img src={image} alt={card.title} />
-      </div>
-      <div className={styles.infoBox}>
-        <div className={styles.infoBoxArt}>
-          <h3 className={styles.title}>{card.title}</h3>
-          <h4 className={styles.artist}>{card.artist_title}</h4>
-          <h5 className={styles.isOnView}>{card.is_on_view ? 'Public' : 'Private'}</h5>
+    <Link to={`/artwork/${card.id}`} className={styles.link}>
+      <div className={styles.card}>
+        <div className={styles.imgBlock}>
+          <img src={image} alt={card.title} />
         </div>
+        <div className={styles.infoBox}>
+          <div className={styles.infoBoxArt}>
+            <h3 className={styles.title}>{card.title}</h3>
+            <h4 className={styles.artist}>{card.artist_title}</h4>
+            <h5 className={styles.isOnView}>{card.is_on_view ? 'Public' : 'Private'}</h5>
+          </div>
+        </div>
+        <Bookmark />
       </div>
-      <Bookmark />
-    </div>
+    </Link>
   );
 };

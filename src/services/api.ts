@@ -31,7 +31,18 @@ export async function searchArtworks(search: string = ''): Promise<ArtWorkCards>
     });
 }
 
-const FIELDS = ['id', 'image_id', 'title', 'artist_title', 'is_on_view'];
+const FIELDS = [
+  'id',
+  'image_id',
+  'title',
+  'artist_title',
+  'is_on_view',
+  'date_display',
+  'artist_display',
+  'credit_line',
+  'on_loan_display',
+  'dimensions',
+];
 
 export async function getArtwork(id: string): Promise<ArtWorkInfo> {
   return fetch(`${BASE_URL}/${id}?fields=${FIELDS}`)

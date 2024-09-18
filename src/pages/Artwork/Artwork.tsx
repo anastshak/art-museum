@@ -1,14 +1,12 @@
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
-import { Main } from '@/components/MainHome/Main';
-import { Outlet } from 'react-router-dom';
+import { MainArtwork } from '@/components/MainArtwork/MainArtwork';
 
-export const Home = () => {
+export const ArtWork = () => {
   return (
     <>
       <Header />
-      <Outlet />
-      <Main />
+      <MainArtwork />
       <Footer />
     </>
   );
