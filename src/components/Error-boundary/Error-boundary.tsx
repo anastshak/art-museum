@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ReactNode } from 'react';
 
-import styles from './Error-Boundary.module.scss';
+import styles from './Error-boundary.module.scss';
 
 type Props = {
   children: ReactNode;

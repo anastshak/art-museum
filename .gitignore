@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 coverage
+
+tsconfig.app.tsbuildinfo
+tsconfig.node.tsbuildinfo
