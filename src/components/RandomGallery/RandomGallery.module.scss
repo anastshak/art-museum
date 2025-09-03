@@ -1,0 +1,24 @@
+.section {
+  text-align: center;
+  margin: 40px 0;
+
+  h2.heading {
+    color: $color-dark-text;
+    @include font(2rem, 400, 40px);
+  }
+
+  h4.heading {
+    color: $color-orange-text;
+    @include font(1rem, 400, 20px);
+  }
+
+  .mainSide {
+    @include flex(center, center, row, 1rem);
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+
+  .loading {
+    margin-top: 45px;
+  }
+}

@@ -1,0 +1,9 @@
+.footer {
+  background: $color-bg-footer;
+  @include flex(space-around, center);
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

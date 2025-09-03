@@ -1,0 +1,16 @@
+.icon {
+  width: 59px;
+  height: 59px;
+  border-radius: 99px;
+  padding: 17px;
+  background-color: $color-bg-fav-white;
+  transition: 0.5s ease-in-out;
+
+  &:hover {
+    background-color: $color-bg-fav-hover;
+  }
+}
+
+.icon.active {
+  background-color: $color-bg-fav-active;
+}

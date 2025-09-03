@@ -1,0 +1,37 @@
+.searchBar {
+  width: 100%;
+  max-width: 500px;
+  height: 64px;
+  padding: 16px;
+  border-radius: 16px;
+  @include flex(space-between, center);
+  @include font(1rem, 400, 16.94px);
+  background-color: $color-bg-search;
+
+  .input {
+    width: 80%;
+    background-color: transparent;
+    border: none;
+  }
+
+  .submit {
+    border-radius: 99px;
+    padding: 3px 4px;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      background-color: $color-btn-disabled;
+    }
+  }
+}
+
+.error {
+  margin-top: 15px;
+  color: $color-red-text;
+}
+
+.searchResult {
+  @include flex(center, center, row, 1rem);
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
